@@ -5,7 +5,7 @@ public class Main{
     //JavaDot.write(null);
     int size = 10;
     boolean[][] matrix = generateMatrix(size);
-    JavaDot.writeFromMatrix(matrix, size);
+    JavaDot.writeFromMatrix(matrix, size, "Matrica");
 
   }
 

@@ -18,9 +18,9 @@ public class JavaDot{
     }
   }
 
-  public static void writeFromMatrix(boolean[][] matrix, int size){
+  public static void writeFromMatrix(boolean[][] matrix, int size, String fileName){
     try{
-      FileWriter myWriter = new FileWriter("Test.dot");
+      FileWriter myWriter = new FileWriter(fileName+".dot");
       myWriter.write("graph {");
       //myWriter.write("A -- B B -- C C -- A C -- C ");
       for(int i = 0; i < size; i++){
