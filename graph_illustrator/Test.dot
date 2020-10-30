@@ -1,1 +1,1 @@
-graph { A -- B B -- C C -- A C -- C } 
+graph {A -- B B -- C C -- A C -- C }
