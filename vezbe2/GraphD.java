@@ -56,7 +56,7 @@ public class GraphD {
 
         try{
             neighbours.get(a).add(b);
-            neighbours.get(b).add(a);
+        //    neighbours.get(b).add(a);
 
             return true;
         } catch(Exception e) {
@@ -181,10 +181,10 @@ public class GraphD {
     }
 
     public static void main(String [] arguments) {
-        GraphD g = new GraphD("tinyG.txt");
+        GraphD g = new GraphD("mediumG.txt");
       //  g.printGraphDD();
-        int x = 2;
-        int y = 10;
+        int x = 12;
+        int y = 11;
         g.findDR(x, y);
         System.out.println(g.findDI(x,y));
         System.out.println(g.findBI(x,y));
