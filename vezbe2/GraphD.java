@@ -10,6 +10,7 @@ public class GraphD {
     private boolean[] niz;
     private List<ArrayList<Integer>> path;
     private Stack<Integer> stack = new Stack<Integer>();
+    private Integer[] boje;
 
     public GraphD(int v){
         this.v = v;
@@ -26,6 +27,7 @@ public class GraphD {
 
             neighbours = new ArrayList<>(v);
             niz = new boolean[v];
+            boje = new Integer[v];
 
             // inicijalizacija svih skupova suseda
             for(int i = 0; i < v; i++) {
@@ -168,6 +170,36 @@ public class GraphD {
 
       }
       return false;
+    }
+
+    public boolean isBipartite(Integer first){
+      for(int i = 0; i < boje.length(); i++){
+        boje[i] = 0;
+        niz[i] = false;
+      }
+      Queue<Integer> q = new LinkedList<>();
+      q.add(first);
+      while(!q.isEmpty()){
+        //TODO boje
+        Integer current = stack.pop();
+        if(niz[current]) continue;
+        niz[current] = true;
+        if(current == goal) {
+      //    System.out.println(vertex);
+          return true;
+        }
+
+        HashSet<Integer> next= neighbours.get(current);
+      //  System.out.println(current);
+      //  System.out.println(next);
+        Iterator it = next.iterator();
+        while(it.hasNext()){
+          Integer n = (Integer)it.next();
+        //  niz[n] = true;
+          stack.add(n);
+        }
+      }
+
     }
 
     public void printGraphD(){
