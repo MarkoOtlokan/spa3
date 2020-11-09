@@ -182,7 +182,6 @@ public class GraphD {
 
     public static void main(String [] arguments) {
         GraphD g = new GraphD("mediumG.txt");
-      //  g.printGraphDD();
         int x = 12;
         int y = 11;
         g.findDR(x, y);
