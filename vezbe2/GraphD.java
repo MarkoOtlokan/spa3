@@ -172,34 +172,33 @@ public class GraphD {
       return false;
     }
 
-    public boolean isBipartite(Integer first){
-      for(int i = 0; i < boje.length(); i++){
+    public boolean isBipartite(Integer first, int color){
+      for(int i = 0; i < boje.length; i++){
         boje[i] = 0;
         niz[i] = false;
       }
+      //1 i 2 su boje
+      int nextColor = 1;
       Queue<Integer> q = new LinkedList<>();
       q.add(first);
       while(!q.isEmpty()){
         //TODO boje
         Integer current = stack.pop();
-        if(niz[current]) continue;
+        if(niz[current]){
+          if(boje[current] == nextColor){
+            return false;
+          }
+        };
         niz[current] = true;
-        if(current == goal) {
-      //    System.out.println(vertex);
-          return true;
-        }
 
         HashSet<Integer> next= neighbours.get(current);
-      //  System.out.println(current);
-      //  System.out.println(next);
         Iterator it = next.iterator();
         while(it.hasNext()){
           Integer n = (Integer)it.next();
-        //  niz[n] = true;
           stack.add(n);
         }
       }
-
+      return true;
     }
 
     public void printGraphD(){
