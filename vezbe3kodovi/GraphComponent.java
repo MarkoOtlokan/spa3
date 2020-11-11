@@ -1,4 +1,3 @@
-package com.pmf.spa3.components;
 
 import edu.princeton.cs.algs4.Digraph;
 import edu.princeton.cs.algs4.Stack;
@@ -8,7 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class GraphComponent { 
+public class GraphComponent {
 
     private Digraph digraph;
     private Stack<Integer> graphCycle;
@@ -76,5 +75,3 @@ public class GraphComponent {
         return !newComponents.isEmpty() ? newComponents : components;
     }
 }
-
-

@@ -1,7 +1,4 @@
 
-import com.pmf.spa3.components.GraphComponent;
-import com.pmf.spa3.cycle.DigraphCycle;
-import edu.princeton.cs.algs4.Digraph;
 
 import java.util.List;
 import java.util.Set;
@@ -12,7 +9,7 @@ public class Main {
 
         Digraph digraph1 = new Digraph(3);
         digraph1.addEdge(0, 1);
-        digraph1.addEdge(0, 2); 
+        digraph1.addEdge(0, 2);
         digraph1.addEdge(1, 0);
 //        digraph1.addEdge(1, 2);
 //        digraph1.addEdge(2, 0);

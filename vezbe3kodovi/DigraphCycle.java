@@ -1,4 +1,3 @@
-package com.pmf.spa3.cycle;
 
 import edu.princeton.cs.algs4.Digraph;
 import edu.princeton.cs.algs4.Stack;
@@ -8,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DigraphCycle {
- 
+
     private Digraph digraph;
     private Stack<Integer> graphCycle;
     private List<Integer> visitedNodes = new ArrayList<>();
