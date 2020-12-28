@@ -169,6 +169,55 @@ public class Mapa<K extends Comparable<K>, V>{
     return pronadjiCvor(c.desni, kljuc);
   }
 
+  void deleteKey(K kljuc) { 
+    koren = deleteRec(koren, kljuc); 
+  }
+ 
+    /* A recursive function to 
+      delete an existing key in BST
+     */
+  Cvor deleteRec(Cvor root, K key){
+        /* Base Case: If the tree is empty */
+        if (root == null)
+            return root;
+ 
+        /* Otherwise, recur down the tree */
+        if (key.compareTo(root.kljuc) > 0)
+            root.levi = deleteRec(root.levi, key);
+        else if (key.compareTo(root.kljuc)<0)
+            root.desni = deleteRec(root.desni, key);
+ 
+        // if key is same as root's 
+        // key, then This is the
+        // node to be deleted
+        else {
+            // node with only one child or no child
+            if (root.levi == null)
+                return root.desni;
+            else if (root.desni == null)
+                return root.levi;
+ 
+            // node with two children: Get the inorder
+            // successor (smallest in the right subtree)
+            root.kljuc = minValue(root.desni);
+ 
+            // Delete the inorder successor
+            root.desni = deleteRec(root.desni, root.kljuc);
+        }
+ 
+        return root;
+    }
+ 
+    K minValue(Cvor root){
+        K minv = root.kljuc;
+        while (root.levi != null) 
+        {
+            minv = root.levi.kljuc;
+            root = root.levi;
+        }
+        return minv;
+    }
+
 
 
 
