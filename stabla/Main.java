@@ -27,6 +27,8 @@ public class Main{
     m.minDubina();
     m.minVrednost();
     m.maxVrednost();
+    m.vratiVrednost("NS 60 BR");
+
   //  m.printNode(m.koren);
   }
 

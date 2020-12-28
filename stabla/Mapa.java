@@ -142,6 +142,33 @@ public class Mapa<K extends Comparable<K>, V>{
     return niz;
   }
 
+  public V vratiVrednost(K kljuc){
+    Cvor cvorTmp = pronadjiCvor(kljuc);
+    if(cvorTmp != null){
+      System.out.println("Za kljuc "+kljuc+" sam pronasao "+cvorTmp.vrednost);
+    }
+    else
+      System.out.println("Za kljuc "+kljuc+" nisam pronasao nista");
+    return null;
+  }
+
+  public Cvor pronadjiCvor(K kljuc){
+    return pronadjiCvor(koren, kljuc); 
+  }
+
+  private Cvor pronadjiCvor(Cvor c, K kljuc){
+    if(c == null){
+      return c;
+    }
+    if(kljuc.compareTo(c.kljuc)==0){
+      return c;
+    }
+    if(kljuc.compareTo(c.kljuc)>0){
+      return pronadjiCvor(c.levi, kljuc);
+    }
+    return pronadjiCvor(c.desni, kljuc);
+  }
+
 
 
 
