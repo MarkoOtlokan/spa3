@@ -104,6 +104,18 @@ public class Mapa<K extends Comparable<K>, V>{
     return maxVrednost(c.levi);
   }
 
+  public int velicinaMape(){
+    int velicinaTmp = velicinaMape(koren);
+    System.out.println("Velicina mape je "+velicinaTmp);
+    return velicinaTmp;
+  }
+
+  private int velicinaMape(Cvor trenutni){
+    if(trenutni == null)
+      return 0;
+    return 1 + velicinaMape(trenutni.levi) + velicinaMape(trenutni.desni);
+  }
+
   public void rebalansiraj(){
     ArrayList<Cvor> niz = vratiNiz();
     System.out.println(niz);

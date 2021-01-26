@@ -28,7 +28,9 @@ public class Main{
     m.minVrednost();
     m.maxVrednost();
     m.vratiVrednost("NS 60 BR");
+    m.velicinaMape();
     m.deleteKey("NS 60 BR");
+    m.velicinaMape();
     m.vratiVrednost("NS 60 BR");
   //  m.printNode(m.koren);
   }
